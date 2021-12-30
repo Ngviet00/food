@@ -1,0 +1,111 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    background-color: white !important;
+}
+.carousel-open-0:checked+.carousel-item, 
+.carousel-open-1:checked+.carousel-item, 
+.carousel-open-2:checked+.carousel-item{
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+#carousel-0:checked~.control-1,
+#carousel-1:checked~.control-2,
+#carousel-2:checked~.control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+.product_main {
+    background: url('/image/bg-all.jpg');
+}
+
+.product_main .custom_container {
+    max-width: 1170px;
+    margin: 0px auto;
+}
+
+.product_main .item_product {
+    width: 24%;
+    margin: 0.5%;
+    box-sizing: border-box;
+}
+
+.product_main #img_product {
+    margin: 0px auto;
+    max-width: 235px;
+    max-height: 145px;
+}
+
+.product_main #btn_buy {
+    padding: 13px 30px;
+    margin-bottom: 10px;
+}
+
+.product_main .box_flex:after {
+    content: "";
+    flex: auto;
+}
+
+.product_main .short_desc {
+    line-height: 20px;
+    height: 48px;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-number-input input:focus {
+  outline: none !important;
+}
+
+.custom-number-input button:focus {
+  outline: none !important;
+}
+#btn_to_top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    z-index: 9999999999;
+}
