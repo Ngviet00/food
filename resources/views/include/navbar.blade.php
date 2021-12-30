@@ -30,7 +30,7 @@
 
                     @if(Route::has('login'))
                     @auth
-                        <a href="{{route('ordered')}}" class="font-medium text-red-800 hover:underline">Đơn hàng của tôi</a>
+                        <a href="{{route('ordered')}}" class="font-medium text-red-800 hover:underline">Đơn hàng đã mua</a>
                         <button style="outline:none" id="dropdownButton" data-dropdown-toggle="dropdown" class="font-medium rounded-lg text-sm py-2.5 text-center inline-flex items-center" type="button">
                             <b>Chào, {{ Auth::user()->name }}</b>
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

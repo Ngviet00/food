@@ -134,11 +134,8 @@
         var check = confirm("Bạn có muốn xóa sản phẩm này không?");
         if (check) {
             $.ajax({
-                url: 'delete_item_cart',
-                method: "POST",
-                data: {
-                    id: id
-                },
+                url: 'delete_item_cart/'+id,
+                method: "get",
                 success: function(response) {
                     console.log(response);
                     window.location.reload();
@@ -155,10 +152,7 @@
         if (check) {
             $.ajax({
                 url: 'delete_all_cart',
-                method: "DELETE",
-                data: {
-                    _token: '{{ csrf_token() }}',
-                },
+                method: "get",
                 success: function(response) {
                     console.log(response);
                     window.location.reload();
@@ -182,9 +176,8 @@
         $('#qty-'+id).val(number);
         $.ajax({
             url: 'update_cart',
-            method: "PATCH",
+            method: "post",
             data: {
-                _token: '{{ csrf_token() }}',
                 id: id,
                 number: number
             },
@@ -206,9 +199,8 @@
 
         $.ajax({
             url: 'update_cart',
-            method: "PATCH",
-            data: {
-                _token: '{{ csrf_token() }}',       
+            method: "post",
+            data: {     
                 id: id,
                 number: number
             },

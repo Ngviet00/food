@@ -26,17 +26,11 @@ class CartController extends Controller
         session()->put('cart', $cart);
         return response()->json('success');
     }
-    // public function delete_item_cart($id){
-    //     $cart = session()->get('cart');
-    //     unset($cart[$id]);
-    //     session()->put('cart', $cart);
-    //     return response()->json($cart);
-    // }
-    public function delete_item_cart(Request $request){
+    public function delete_item_cart($id){
         $cart = session()->get('cart');
-        unset($cart[$request->id]);
+        unset($cart[$id]);
         session()->put('cart', $cart);
-        return response()->json('tanhco');
+        return response()->json($cart);
     }
     public function delete_all_cart(){
         $cart = [];

@@ -40,12 +40,10 @@ Route::get('list_cart',[CartController::class,'index'])->name('list_cart');
 //add to cart
 Route::POST('add_to_cart',[CartController::class,'add_to_cart'])->name('add_to_cart');
 
-// Route::delete('delete_item_cart/{id}',[CartController::class,'delete_item_cart'])->name('delete_item_cart');
+Route::get('delete_item_cart/{id}',[CartController::class,'delete_item_cart'])->name('delete_item_cart');
 
-Route::post('delete_item_cart',[CartController::class,'delete_item_cart'])->name('delete_item_cart');
+Route::get('delete_all_cart',[CartController::class,'delete_all_cart'])->name('delete_all_cart');
 
-Route::delete('delete_all_cart',[CartController::class,'delete_all_cart'])->name('delete_all_cart');
-
-Route::patch('update_cart', [CartController::class, 'update_cart'])->name('update_cart');
+Route::post('update_cart', [CartController::class, 'update_cart'])->name('update_cart');
 
 Route::post('get_ward/{id}',[HomeController::class, 'get_ward'])->name('get_ward');

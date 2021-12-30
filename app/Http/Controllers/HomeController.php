@@ -9,9 +9,7 @@ use App\Models\OrderDetail;
 use App\Models\Slide;
 use App\Models\Ward;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use PhpOption\Option;
 
 class HomeController extends Controller
 {
@@ -34,38 +32,31 @@ class HomeController extends Controller
     }
     public function submit_order(Request $request)
     {
-        // $order = Order::create([
-        //     'user_id' => Auth()->id(),
-        //     'name' => $request->name,
-        //     'phone' => $request->phone,
-        //     'province' => $request->province,
-        //     'district' => $request->district,
-        //     'ward' => $request->ward,
-        //     'note' => $request->note
-        // ]);
+        $order = Order::create([
+            'user_id' => Auth()->id(),
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'province' => $request->province,
+            'district' => $request->district,
+            'ward' => $request->ward,
+            'note' => $request->note
+        ]);
 
-        // foreach (session('cart') as $value) {
-        //     OrderDetail::create([
-        //         'order_id' => $order->id,
-        //         'name_product' => $value['name_product'],
-        //         'image' => $value['img'],
-        //         'price' => $value['price'],
-        //         'qty' => $value['qty'],
-        //         'total_topping' => $value['total_topping'],
-        //         'list_topping' => $value['list_topping'],
-        //         'note' => $value['message']
-        //     ]);
-        // }
-        // $cart = [];
-        // session()->put('cart', $cart);
-
-        $data = 0;
-        for($i = 0; $i< 1000; $i++)
-        {
-            $data += $i;
+        foreach (session('cart') as $value) {
+            OrderDetail::create([
+                'order_id' => $order->id,
+                'name_product' => $value['name_product'],
+                'image' => $value['img'],
+                'price' => $value['price'],
+                'qty' => $value['qty'],
+                'total_topping' => $value['total_topping'],
+                'list_topping' => $value['list_topping'],
+                'note' => $value['message']
+            ]);
         }
-
-        return response()->json($data);
+        $cart = [];
+        session()->put('cart', $cart);
+        return response()->json($cart);
     }
     public function ordered()
     {
