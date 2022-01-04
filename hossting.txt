@@ -1,0 +1,17 @@
+Please take a note of the details below these are needed to access your account.
+Your account is now active.
+
+Control panel username:	uoolo_30692575
+Control panel password:	**********
+Control panel URL:	cpanel.ihostfull.com
+MySQL username	uoolo_30692575
+MySQL password:	**********
+MySQL hostname:	sql301.ihostfull.com
+FTP username:	uoolo_30692575
+FTP password:	**********
+FTP host name:	ftp.ihostfull.com
+Your Website URL:	http://ngviet00.ihostfull.com
+ 	 
+Thank you for choosing us to host your websites!
+
+ihostfull.com hosting services 2021
